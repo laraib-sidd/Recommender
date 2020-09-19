@@ -1,0 +1,67 @@
+{% extends 'recommender_app/base.html' %}
+
+
+{% block style %}
+
+<style type="text/css">
+	.disable_btn:hover {
+		background-color: grey;
+		color: black;
+		font-weight: bold;
+		cursor: no-drop;
+	}
+
+	.disable_btn {
+		background-color: crimson;
+		color: white;
+	}
+</style>
+{% endblock style %}
+
+
+<title>
+	{% block title %}
+	INDEX YALL
+	{% endblock title %}
+
+
+</title>
+
+<body>
+	{% block content %}
+
+	{% if messages %}
+	{% for message in messages %}
+	<div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+	{% endfor %}
+
+
+	{% endif %}
+	<h1>Hello world</h1>
+
+	<label for="choices">Choose an Option: </label>
+
+
+	<form action="{% url 'index' %}" method="post">
+		{% csrf_token %}
+		<select name="choices" id="choices">
+			<option value="anime">Anime</option>
+			<option value="movies">Movies</option>
+
+		</select>
+
+		{% if user.is_authenticated %}
+		<button type="submit" title="Let's go!" class="btn btn-primary">Submit</button>
+		{% else %}
+		<button type="submit" disabled title="You need to be logged in!" class="disable_btn">Submit</button>
+		{% endif %}
+	</form>
+
+
+
+
+	{% endblock content %}
+
+
+
+</body>

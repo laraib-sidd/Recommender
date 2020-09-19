@@ -1,0 +1,17 @@
+{% extends 'recommender_app/base.html' %}
+
+
+{% block content %}
+<h1>Welcome to anime results page</h1>
+
+
+{% if error %}
+
+<h1>Sorry, couldn't find the Anime Result with the particular query, <a href="{% url 'index' %}">Please try again
+        later</a></h1>
+
+{% endif %}
+
+
+
+{% endblock content %}

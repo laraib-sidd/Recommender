@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+	</script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+		integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
+	</script>
+
+	<title>
+		{% block title %}BASE BITCH{%endblock title %}
+	</title>
+
+	{% block style %}
+
+	{% endblock style %}
+
+
+</head>
+<style>
+	body {
+		text-align: center;
+		background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
+	}
+
+	label {
+		font-size: 1.5rem;
+		padding: 2%
+	}
+
+	h1 {
+		font-size: 4rem;
+		padding: 5%;
+		font-family: serif;
+	}
+
+	#choices {
+		font-size: 1.2rem;
+	}
+
+	button {
+		font-size: 1.2rem;
+	}
+</style>
+
+<body>
+
+	{% if user.is_authenticated %}
+	Hello, Welcome {{ user.username }}. You have full access to the Website!
+	<a href="/logout">Logout?</a>
+
+	{% else %}
+	<div class="dang" style="background-color: orange; font-weight: bold; padding: 10px; color: white;">
+		Sorry, you're not logged in and don't have full access to the website!. <a href="/login">Login</a> or <a
+			href="/signup">Signup</a>
+	</div>
+
+	{% endif %}
+
+
+	{% block content %}
+
+	BASE ITS BASE BITCH CHANGE THE BLOCK FAG
+	{% endblock content %}
+
+
+</body>
+
+</html>

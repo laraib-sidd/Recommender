@@ -1,0 +1,35 @@
+{% extends 'recommender_app/base.html' %}
+
+<title>
+	{% block title %}
+	INDEX YALL
+	{% endblock title %}
+
+
+</title>
+
+<body>
+	{% block content %}
+
+
+	{% if user.is_authenticated %}
+	<h1>Anime</h1>
+
+	<form action="{% url 'anime_results' %}" method="POST">
+		{% csrf_token %}
+		<input type="text" placeholder="Enter an Anime name" name="anime_field">
+		<input type="submit" value="Submit">
+	</form>
+
+
+	{% else %}
+	<div style="display: flex; align-items: flex-end; justify-content: center;">
+
+		<h1>Sorry this page isn't accessible to you! Please login.</h1>
+	</div>
+	</div>
+	{% endif %}
+
+	{% endblock content %}
+
+</body>
