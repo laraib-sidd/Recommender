@@ -1,1 +1,1 @@
-worker: python manage.py runserver
+web: gunicorn recommender_app.wsgi --log-file -
