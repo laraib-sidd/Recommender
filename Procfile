@@ -1,1 +1,1 @@
-web: gunicorn recommender.wsgi --log-file -
+web: gunicorn recommender_project.wsgi --log-file -
