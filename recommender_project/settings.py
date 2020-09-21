@@ -25,7 +25,7 @@ SECRET_KEY = "ctgs($_7wdjies-49clj$nh%runpkqu#@sj!x-n3z5j#^_!tao"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
