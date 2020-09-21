@@ -129,3 +129,4 @@ STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "static"),)
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
