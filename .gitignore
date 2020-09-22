@@ -61,6 +61,7 @@ local_settings.py
 db.sqlite3-journal
 
 # Flask stuff:
+scripts/Movies
 instance/
 .webassets-cache
 
